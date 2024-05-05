@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>哈尔滨理工大学计算机科学与技术学院官网</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="top">
+        <!-- 导航开始 -->
+        <div class="Top">
+            <div class="header">
+                <div class="headtop">
+                    <div class="headfirst">
+                        <!-- logo开始 -->
+                        <div class="logo">
+                            <a href="index.html"><img src="image/logo.png"></a>
+                        </div>
+                        <!-- logo结束 -->
+                       <!-- 头右部分开始 -->
+                        <div>
+                            <div class="oldhome">
+                                <a href="index.html">旧版首页</a>
+                            </div>
+                             <!-- 搜索框开始 -->
+                            <div class="search">
+                                <div class="search_box">
+                                    <input class ="search-input"type="text" placeholder="请输入关键字" width="110px" height="24px" >
+                                    <input class="search-submit" type="submit" > 
+                                    <!-- <img src="image/sous.png" width="32px" height="24px"> -->
+                                </div>
+                            </div>
+                            <!-- 搜索框结束 -->
+                        </div>
+                    </div>
+                    <!-- 头右部分结束 -->
+                </div>
+                <div class="topline1"></div>
+                <!--  -->
+                <!--导航栏开始-->
+                <div class="navi">
+                    <ul>
+                        <li><a href="index.html" >首页</a></li>
+                        <li><a href="index.html">学院概况</a></li>
+                        <li><a href="index.html">师资队伍</a></li>
+                        <li><a href="index.html">人才培养</a></li>
+                        <li><a href="index.html">学科建设</a></li>
+                        <li><a href="index.html">专业建设</a></li>
+                        <li><a href="index.html">科学研究</a></li>
+                        <li><a href="index.html">党群工作</a></li>
+                        <li><a href="index.html">学生工作</a></li>
+                        <li><a href="index.html">招生就业</a></li>
+                        <li><a href="index.html">校友之家</a></li>
+                    </ul>
+                </div>
+                <!--导航栏结束-->
+            </div>
+        </div>
+        <!-- 导航结束 -->
+        <!-- 首页滚动图开始 -->
+        <div class="banner">
+            <div class="box">
+                <div class="box-img"><img src="image/1.jpg" width="1100" height="435"></div>
+                <div class="box-img"><img src="image/2.jpg" width="1100" height="435"></div>
+                <div class="box-img"><img src="image/3.jpg" width="1100" height="435"></div>
+                <div class="box-img"><img src="image/4.jpg" width="1100" height="435"></div>
+                <div class="box-left">&lt;</div>
+                <div class="box-right">&gt;</div>
+                <div class="box-zhiding">
+                    <ul>
+                        <li class="botton"></li>
+                        <li class="botton"></li>
+                        <li class="botton"></li>
+                        <li class="botton"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 首页滚动图结束 -->
+    </div>
+    <!-- 头部结束 -->
+    <!-- 身体开始 -->
+    <div  class="body1">
+        <div class="inner" width="1100px" height="401px">
+            <!-- 左部分开始 -->
+            <div class="ml" width="718px" height="316px">
+                <!-- 左标题开始 -->
+                <div class="tt"> 
+                    <h2 class="tit">学院新闻</h2>
+                    <a href="#" class ="ttmore">
+                        <span class="more_text" frag="按钮内容">更多>></span>
+                    </a>
+                </div>
+                <!-- 左标题结束 -->
+                <!-- 左滚动图开始 -->
+                <div class="bannerb">
+                    <div class="boxb">
+                        <div class="box-imgb"><img src="image/b1.jpg" width="350" height="260"></div>
+                        <div class="box-imgb"><img src="image/b2.jpg" width="350" height="260"></div>
+                        <div class="box-imgb"><img src="image/b3.jpg" width="350" height="260"></div>
+                        <div class="box-imgb"><img src="image/b4.jpg" width="350" height="260"></div>
+                        <!-- <div class="box-img"><img src="image/b5.jpg" width="350" height="260"></div> -->
+                        <div class="box-leftb">&lt;</div>
+                        <div class="box-rightb">&gt;</div>
+                        <div class="box-zhidingb">
+                            <ul>
+                                <li class="bottonb"></li>
+                                <li class="bottonb"></li>
+                                <li class="bottonb"></li>
+                                <li class="bottonb"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 左滚动图结束 -->
+            </div>
+            <!-- 左部分结束 -->
+            <div class="mr">
+
+            </div>
+        </div>
+    </div>
+    <!-- 身体结束 -->
+    <script src="./js/lunb.js"></script>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" >
+        $(function(){
+            var index=0;//标记当前图片
+            dingshiqi();
+            function dingshiqi(){
+                var f=setInterval(function(){
+                if(index==$(".box-img").length-1){
+                    index=0;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                }
+                else{
+                    index++;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                }
+            },8000)
+            }
+            $(".box-left").click(function(){
+                clearInterval(f);
+                if(index==0){
+                    index=$(".box-img").length-1;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                else{
+                    index--;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                
+            })
+            $(".box-right").click(function(){
+                if(index==$(".box-img").length-1){
+                    index=0;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                else{
+                    index++;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+            })
+            $(".botton").click(function(){
+                    var indexx =$(this).index();
+                    index=indexx;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+
+                })
+        })
+    </script>
+
+</body>
+</html>

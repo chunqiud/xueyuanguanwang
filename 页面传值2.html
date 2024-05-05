@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HTML2</title>
+</head>
+<body>
+    <h1>Welcome to HTML2!</h1>
+    <p>Name: <span id="name"></span></p>
+    <script>
+        // 获取URL中的参数
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get('name');
+        // 将数据渲染到页面上
+        document.getElementById('name').textContent = name;
+    </script>
+</body>
+</html>

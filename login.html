@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/login.css">
+    <script src="/js/login.js"> </script>
+    <script src="/js/Clickl.js"></script>
+</head>
+<body>
+    <div class="control">
+        <div class="item">
+            <div class="active">登录</div><div>注册</div>
+        </div>
+        <div class="content">
+            <div style="display: block;">
+                <p>账户</p>
+                <input type="text" placeholder="username" id="login-username"/>
+                <p>密码</p>
+                <input type="password" placeholder="password" id="login-password"/>
+                <br>
+                <input type="submit" value="登录" onclick="login()">
+            </div>
+            <div>
+                <p>账户</p>
+                <input type="text" placeholder="username" id="register-username"/>
+                <p>密码</p>
+                <input type="password" placeholder="password" id="register-password"/>
+                <p>密码</p>
+                <input type="text" placeholder="email" id="register-email" />
+                <br>
+                <input type="submit" value="注册" onclick="register()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

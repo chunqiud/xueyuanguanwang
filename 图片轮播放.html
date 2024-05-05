@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/lunbo.css">
+</head>
+<body>
+    <div id="con">
+        <ul>
+            <li><img src="/image/b1.jpg" alt=""></li>
+            <li><img src="/image/b2.jpg" alt=""></li>
+            <li><img src="/image/b3.jpg" alt=""></li>
+            <li><img src="/image/b4.jpg" alt=""></li>
+            <li><img src="/image/1.jpg" alt=""></li>
+        </ul>
+        <div id="bu">
+            <button class="bu">前进</button>
+            <button class="bu">后退</button>
+        </div>
+    </div>
+    <script>
+        let oUl=document.querySelector('ul');
+        oUl.innerHTML+=oUl.innerHTML;
+        let ali=document.querySelectorAll('li');
+        let aBu=document.querySelectorAll('.bu');
+        oUl.style.width=ali[0].offsetWidth*ali.length+'px';
+        // alert(oUl.style.width);
+        let speed=2;
+        let move=()=>{
+            if(oUl.offsetLeft< -oUl.offsetWidth/2){
+                oUl.style.left='0';
+            }
+            if(oUl.offsetLeft>0){
+                oUl.style.left=-oUl.offsetWidth/2+'px';
+            }
+            oUl.style.left=oUl.offsetLeft+speed+'px';
+        }
+        let timer=setInterval(move,30)
+        oUl.addEventListener('mouseover',function(){
+            clearInterval(timer)
+        })
+        oUl.addEventListener('mouseout',function(){
+            timer=setInterval(move,30)
+        })
+        aBu[0].onclick=function(){
+            speed*=-1;
+        }
+        aBu[1].onclick=function(){
+            speed*=-1;
+        }
+   </script>
+</body>
+</html>

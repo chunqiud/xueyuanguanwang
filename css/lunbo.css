@@ -1,0 +1,45 @@
+*{
+   margin: 0;
+   padding: 0; 
+}
+body{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+#con{
+    position: absolute;
+    width: 1600px;
+    height: 400px;
+    overflow: hidden;
+}
+ul{
+    position: absolute;
+    left: 0;
+    width: 1600px;
+    height: 300px;
+}
+
+li{
+    width: 300px;
+    list-style: none;
+    float: left;
+    padding-right: 20px;
+}
+#bu{
+    width: 400px;
+    position: absolute;
+    bottom: 20px;
+    left:50%;
+    transform: translateX(-50%);
+}
+.bu{
+    height: 35px;
+    width: 80px;
+    margin: 0 50px;
+}

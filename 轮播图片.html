@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图片</title>
+    <style type="text/css">
+        .box{
+            width: 1100px;
+            height: 435px;
+            position: relative;
+        }
+        .box-img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: all 1.5s;
+        }
+        .box-img:nth-child(1){
+            opacity: 1;
+        }
+        .box-left{
+            position: absolute;
+            width: 35px;
+            height: 70px;
+            /* background-color: #00000050; */
+            color: #ccc;
+            top: 185px;
+            border-radius: 5px 5px 5px 5px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 27px;
+        }
+        .box-left:hover{
+            background-color: #00000050;
+            color: #fff;
+        }
+        .box-right{
+            position: absolute;
+            width: 35px;
+            height: 70px;
+            /* background-color: #00000050; */
+            color: #ccc;
+            top: 185px;
+            border-radius: 5px 5px 5px 5px;
+            text-align: center;
+            line-height: 70px;
+            font-size: 27px;
+            right: 0;
+        }
+        .box-right:hover{
+            background-color: #00000050;
+            color: #fff;
+        }
+        .box-zhiding>ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .box-zhiding li{
+            width: 14px;
+            height: 14px;
+            border-radius: 100%;
+            background-color: #ccc;
+            float: left;
+            margin-right: 10px;
+        }
+        .box-zhiding li:hover{
+            background-color: #fff;
+        }
+        .box-zhiding lin:nth-child(1){
+            background-color: #fff;
+        }
+        .box-zhiding{
+            position: absolute;
+            bottom: 30px;
+            right: 100px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-img"><img src="image/1.jpg" width="1100" height="435"></div>
+        <div class="box-img"><img src="image/2.jpg" width="1100" height="435"></div>
+        <div class="box-img"><img src="image/3.jpg" width="1100" height="435"></div>
+        <div class="box-img"><img src="image/4.jpg" width="1100" height="435"></div>
+        <div class="box-left">&lt;</div>
+        <div class="box-right">&gt;</div>
+        <div class="box-zhiding">
+            <ul>
+                <li class="botton"></li>
+                <li class="botton"></li>
+                <li class="botton"></li>
+                <li class="botton"></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" >
+        $(function(){
+            var index=0;//标记当前图片
+            dingshiqi();
+            function dingshiqi(){
+                var f=setInterval(function(){
+                if(index==$(".box-img").length-1){
+                    index=0;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                }
+                else{
+                    index++;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                }
+            },8000)
+            }
+            $(".box-left").click(function(){
+                if(index==0){
+                    index=$(".box-img").length-1;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                else{
+                    index--;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                
+            })
+            $(".box-right").click(function(){
+                if(index==$(".box-img").length-1){
+                    index=0;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+                else{
+                    index++;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+                }
+            })
+            $(".botton").click(function(){
+                    var indexx =$(this).index();
+                    index=indexx;
+                    $(".box-img").css("opacity","0");
+                    $(".box-img").eq(index).css("opacity","1");
+                    $(".botton").css("background","#ccc")
+                    $(".botton").eq(index).css("background","#fff");
+                    dingshiqi();
+
+                })
+        })
+    </script>
+    
+</body>
+</html>
